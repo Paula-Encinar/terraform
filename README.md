@@ -16,6 +16,8 @@
 
 - ``terraform destroy``destruye la infra que se ha creado
 
+- ``terraform output`` si tienes un fichero como output.tf donde defines los outputs que quieres ver los podras mostrar en pantalla con este comando.
+
 
 ## Desplegar en AWS
 
