@@ -1,9 +1,11 @@
 # Main terraform file for ALL the environments!!!
 terraform {
-  cloud {
+  backend "remote" {
+    hostname     = "app.terraform.io"
     organization = "onebeyond-paula"
+
     workspaces {
-      name = "terraform-aws-ec2-instance"
+      prefix = "terraform-"
     }
   }
 
