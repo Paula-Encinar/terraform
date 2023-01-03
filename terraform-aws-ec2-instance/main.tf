@@ -46,7 +46,7 @@ resource "aws_security_group" "allow_ssh" {
 
 resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
+  instance_type = var.instance_type
   key_name = "AWS"
 
   vpc_security_group_ids = [
