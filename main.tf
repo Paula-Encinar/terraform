@@ -2,10 +2,10 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "Servelegal"
+    organization = "onebeyond-paula"
 
     workspaces {
-      prefix = "aws-"
+      prefix = "terraform-"
     }
   }
   required_providers {
