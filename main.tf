@@ -1,13 +1,12 @@
 # Main terraform file for ALL the environments!!!
 terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
+  cloud {
     organization = "onebeyond-paula"
-
     workspaces {
-      prefix = "terraform-"
+      name = "terraform-aws-ec2-instance"
     }
   }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
