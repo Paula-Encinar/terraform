@@ -45,7 +45,7 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
+  ami           = var.instance_ami
   instance_type = var.instance_type
   key_name = "AWS"
 

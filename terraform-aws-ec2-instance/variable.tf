@@ -6,3 +6,8 @@ variable "instance_type" {
   description = "Value of the instance type for the EC2 instance"
   type        = string
 }
+
+variable "instance_ami" {
+  description = "Value of the instance type for the EC2 instance"
+  type        = string
+}
