@@ -28,16 +28,13 @@ module "vpc"{
 # RDS
 module "rds" {
     source            = "./rds"
-    environment       = var.environment
-    long_environment  = var.long_environment
     db_password       = var.db_password
     vpc_id            = module.vpc.vpc_id
 }
 
 module "ecs"{
     source = "./ecs"
-    public_subnets   = [module.vpc.public_subnet_1, module.vpc.public_subnet_2]
-    private_subnets  = [module.vpc.private_subnet_1, module.vpc.private_subnet_2]
+    public_subnets   = module.vpc.public_subnet_1
     vpc_id           = module.vpc.vpc_id
 }
 
