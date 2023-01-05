@@ -22,3 +22,20 @@ resource "aws_ecs_service" "hello_world" {
 
   depends_on = [aws_lb_listener.hello_world]
 }
+
+# Load Balancers
+module "loadbalancers" {
+  source            = "./loadbalancers"
+  vpc_id            = var.vpc_id
+  public_subnets    = var.public_subnets
+  sg_lb_backend     = module.security_groups.sg_lb_backend
+  sg_lb_frontend    = module.security_groups.sg_lb_frontend
+  long_environment  = var.long_environment
+}
+
+# Security Groups
+module "security_groups" {
+  source            = "./securitygroups"
+  vpc_id            = var.vpc_id
+  long_environment  = var.long_environment
+}
