@@ -22,7 +22,8 @@ provider "aws" {
 
 module "vpc"{
     source= "./vpc"
-    vpc_id = module.vpc.vpc.id
+    vpc_cidr= var.vpc_cidr
+    region= var.region
 }
 
 # RDS
