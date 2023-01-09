@@ -8,6 +8,6 @@ variable "instance_type" {
 }
 
 variable "instance_ami" {
-  description = "Value of the instance type for the EC2 instance"
+  description = "Value of the instance ami for the EC2 instance"
   type        = string
 }
