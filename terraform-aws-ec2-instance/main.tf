@@ -76,8 +76,8 @@ resource "aws_instance" "app_server2" {
     tags_all                             = {
         "Name" = "appconsole"
     }
-    # vpc_security_group_ids               = [
-    #     "sg-098d446bdba18db8a",
-    # ]
+    vpc_security_group_ids               = [
+        "sg-098d446bdba18db8a",
+    ]
 
 }
