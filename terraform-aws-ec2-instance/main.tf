@@ -60,3 +60,14 @@ resource "aws_instance" "app_server" {
   depends_on = [ aws_security_group.allow_ssh ]
   
 }
+
+resource "aws_instance" "app_server2" {
+  ami           = "ami-03f8756d29f0b5f21"
+  instance_type = "t2.micro"
+  key_name = "AWS"
+
+  tags = {
+    Name = var.instance_name
+  }
+  
+}
