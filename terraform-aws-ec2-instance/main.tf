@@ -25,12 +25,12 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
     // To Allow Port 80 Transport
-  # ingress {
-  #   from_port = 80
-  #   protocol = ""
-  #   to_port = 80
-  #   cidr_blocks = ["0.0.0.0/0"]
-  # }
+  ingress {
+    from_port = 80
+    protocol = ""
+    to_port = 80
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   egress {
     from_port       = 0
@@ -59,4 +59,25 @@ resource "aws_instance" "app_server" {
 
   depends_on = [ aws_security_group.allow_ssh ]
   
+}
+
+resource "aws_instance" "app_server2" {
+    ami                                  = "ami-03f8756d29f0b5f21"
+    availability_zone                    = "us-west-2a"
+    instance_type                        = "t2.micro"
+    key_name                             = "AWS"
+    security_groups                      = [
+        "test-sg",
+    ]
+    subnet_id                            = "subnet-08846cac2c6aaf9ac"
+    tags                                 = {
+        "Name" = "appconsole"
+    }
+    tags_all                             = {
+        "Name" = "appconsole"
+    }
+    # vpc_security_group_ids               = [
+    #     "sg-098d446bdba18db8a",
+    # ]
+
 }
