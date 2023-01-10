@@ -67,7 +67,7 @@ resource "aws_instance" "app_server2" {
   key_name = "AWS"
 
   tags = {
-    Name = var.instance_name
+    Name = "appconsole"
   }
   
 }
